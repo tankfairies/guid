@@ -26,8 +26,9 @@ class AbstractNamespaceTest extends Unit
 
     public function testGenerate()
     {
-        $this->mock->method('hash')
-             ->willReturn(md5('newName'));
+        $this->mock->expects($this->once())
+            ->method('hash')
+            ->will($this->returnValue(md5('newName')));
 
         $guid = $this->mock->generate(GuidInterface::FMT_STRING);
 
