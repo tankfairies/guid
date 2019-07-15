@@ -15,13 +15,14 @@ class AbstractNamespaceTest extends Unit
 
     protected function _before()
     {
-        $this->mock = $this->getMockForAbstractClass('Guid\Version\AbstractNamespace');
-        $this->mock->setNamespace('newName');
+        $this->mock = $this->getMockBuilder('Guid\Version\AbstractNamespace')
+            ->setMethods(['hash'])
+            ->getMockForAbstractClass();
     }
 
     protected function _after()
     {
-        $this->mock = null;
+     //   $this->mock = null;
     }
 
     public function testGenerate()
