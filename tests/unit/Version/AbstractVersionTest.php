@@ -3,6 +3,7 @@
 namespace Tests\unit\Version;
 
 use \Codeception\Test\Unit;
+use Guid\Libs\GuidException;
 use ReflectionProperty;
 
 class AbstractVersionTest extends Unit
@@ -38,5 +39,23 @@ class AbstractVersionTest extends Unit
         $reflection = new ReflectionProperty($mock, 'salt');
         $reflection->setAccessible(true);
         $this->assertEquals('newsalt', $reflection->getValue($mock));
+    }
+
+    public function testSetSaltInvalid()
+    {
+        $this->tester->expectException(
+            new GuidException('Salt needs to be at least 6 characters long'),
+            function () {
+                $mock = $this->getMockForAbstractClass('Guid\Version\AbstractVersion');
+                $mock->setSalt('123');
+                //$this->guid->generate(GuidInterface::UUID_TIME, GuidInterface::FMT_STRING);
+            }
+        );
+        //$mock = $this->getMockForAbstractClass('Guid\Version\AbstractVersion');
+        //$mock->setSalt('newsalt');
+
+        ///$reflection = new ReflectionProperty($mock, 'salt');
+        //$reflection->setAccessible(true);
+        //$this->assertEquals('new', $reflection->getValue($mock));
     }
 }

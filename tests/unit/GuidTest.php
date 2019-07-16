@@ -97,7 +97,7 @@ class GuidTest extends Unit
         $this->tester->expectException(
             new Exception('Unknown error'),
             function () {
-                $this->guid->generate(GuidInterface::UUID_NAME_SHA1, GuidInterface::FMT_FIELD);
+                $this->guid->generate(GuidInterface::UUID_NAME_SHA1, GuidInterface::FMT_FIELD, 'newsalt');
             }
         );
     }

@@ -1,7 +1,16 @@
 <?php
+/**
+ * Copyright (c) 2019 Tankfairies
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ *
+ * @see https://github.com/tankfairies/guid
+ */
 
 namespace Guid\Version;
 
+use Guid\Libs\GuidException;
 use Guid\Libs\GuidInterface;
 
 /**
@@ -52,6 +61,8 @@ abstract class AbstractVersion
     protected $namespace = '';
 
     /**
+     * Set the namespace for v3 and v5
+     *
      * @param $namespace
      * @return $this
      */
@@ -62,27 +73,20 @@ abstract class AbstractVersion
     }
 
     /**
-     * @param $node
+     * Sets the salt for v1, v3 and v5
+     *
+     * @param $salt
      * @return $this
+     * @throws GuidException
      */
     public function setSalt($salt)
     {
+        $size = mb_strlen($salt);
+        if ($size < 6 && $size != 0) {
+            throw new GuidException('Salt needs to be at least 6 characters long');
+        }
         $this->salt = $salt;
         return $this;
-    }
-
-    /**
-     * Public API, convert a UUID from one format to another
-     *
-     * @param $uuid
-     * @param $from
-     * @param $to
-     * @return mixed
-     */
-    protected function convert($uuid, $from, $to)
-    {
-        $conv = $this->convert[$from][$to];
-        return ($this->$conv($uuid));
     }
 
     /**

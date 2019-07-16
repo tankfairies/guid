@@ -1,4 +1,12 @@
 <?php
+/**
+ * Copyright (c) 2019 Tankfairies
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ *
+ * @see https://github.com/tankfairies/guid
+ */
 
 namespace Guid\Version;
 
@@ -17,7 +25,7 @@ abstract class AbstractNamespace extends AbstractVersion implements VersionInter
      */
     public function generate(int $fmt)
     {
-        $field = $this->convert($this->namespace, GuidInterface::FMT_STRING, GuidInterface::FMT_FIELD);
+        $field = $this->string2field($this->namespace);
 
         /* Swap byte order to keep it in big endian on all platforms */
         $field['time_low'] = $this->swap32($field['time_low']);
@@ -25,7 +33,7 @@ abstract class AbstractNamespace extends AbstractVersion implements VersionInter
         $field['time_hi'] = $this->swap16($field['time_hi']);
 
         /* Convert the namespace to binary and concatenate salt */
-        $raw = $this->convert($field, GuidInterface::FMT_FIELD, GuidInterface::FMT_BINARY) . $this->salt;
+        $raw = $this->field2binary($field).$this->salt;
 
         /* Hash the namespace and salt and convert to a byte array */
         $val = $this->hash($raw);
