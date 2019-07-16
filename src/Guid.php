@@ -8,14 +8,14 @@
  * @see https://github.com/tankfairies/guid
  */
 
-namespace Guid;
+namespace Tankfairies\Guid;
 
-use Guid\Libs\GuidException;
-use Guid\Libs\GuidInterface;
-use Guid\Version\Five;
-use Guid\Version\Four;
-use Guid\Version\One;
-use Guid\Version\Three;
+use Tankfairies\Guid\Libs\GuidException;
+use Tankfairies\Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Version\Five;
+use Tankfairies\Guid\Version\Four;
+use Tankfairies\Guid\Version\One;
+use Tankfairies\Guid\Version\Three;
 use Exception;
 
 /**

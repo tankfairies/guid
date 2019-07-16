@@ -3,7 +3,7 @@
 namespace Tests\Libs;
 
 use \Codeception\Test\Unit;
-use Guid\Libs\GuidException;
+use Tankfairies\Guid\Libs\GuidException;
 
 class GuidExceptionTest extends Unit
 {

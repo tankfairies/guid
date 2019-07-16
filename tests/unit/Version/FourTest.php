@@ -3,8 +3,8 @@
 namespace Tests\unit\Version;
 
 use \Codeception\Test\Unit;
-use Guid\Libs\GuidInterface;
-use Guid\Version\Four;
+use Tankfairies\Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Version\Four;
 
 class FourTest extends Unit
 {

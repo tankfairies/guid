@@ -8,10 +8,10 @@
  * @see https://github.com/tankfairies/guid
  */
 
-namespace Guid\Version;
+namespace Tankfairies\Guid\Version;
 
 use Exception;
-use Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Libs\GuidInterface;
 
 /**
  * Class Four

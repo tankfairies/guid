@@ -3,9 +3,9 @@
 namespace Tests;
 
 use \Codeception\Test\Unit;
-use Guid\Guid;
-use Guid\Libs\GuidException;
-use Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Guid;
+use Tankfairies\Guid\Libs\GuidException;
+use Tankfairies\Guid\Libs\GuidInterface;
 use Exception;
 
 class GuidTest extends Unit

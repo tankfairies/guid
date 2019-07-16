@@ -8,7 +8,7 @@
  * @see https://github.com/tankfairies/guid
  */
 
-namespace Guid\Version;
+namespace Tankfairies\Guid\Version;
 
 /**
  * Interface VersionInterface

@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Guid\\": "src/"
+      "Tankfairies\\Guid\\": "src/"
     }
   },
   "autoload-dev": {

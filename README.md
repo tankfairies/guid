@@ -61,7 +61,7 @@ A salt is required for versions 1 but optional for versions 3 and 5.
 
 Generate a Version one GUID. (The third parameter is a salt and is required).
 ```php
-use Tankfairies/guid;
+use Tankfairies/Guid/Guid;
 
 $guid = new Guid();
 $guidToken = $guid->generate(
@@ -73,7 +73,7 @@ $guidToken = $guid->generate(
 
 Generate a Version three GUID.
 ```php
-use Tankfairies/guid;
+use Tankfairies/Guid/Guid;
 
 $guid = new Guid();
 $guidToken = $guid->generate(
@@ -86,7 +86,7 @@ $guidToken = $guid->generate(
 
 Generate a Version four GUID.
 ```php
-use Tankfairies/guid;
+use Tankfairies/Guid/Guid;
 
 $guid = new Guid();
 $guidToken = $guid->generate(
@@ -97,7 +97,7 @@ $guidToken = $guid->generate(
 
 Generate a Version five GUID.
 ```php
-use Tankfairies/guid;
+use Tankfairies/Guid/Guid;
 
 $guid = new Guid();
 $guidToken = $guid->generate(

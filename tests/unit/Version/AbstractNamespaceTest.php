@@ -3,7 +3,7 @@
 namespace Tests\unit\Version;
 
 use \Codeception\Test\Unit;
-use Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Libs\GuidInterface;
 
 class AbstractNamespaceTest extends Unit
 {
@@ -15,7 +15,7 @@ class AbstractNamespaceTest extends Unit
 
     protected function _before()
     {
-        $this->mock = $this->getMockForAbstractClass('Guid\Version\AbstractNamespace');
+        $this->mock = $this->getMockForAbstractClass('Tankfairies\Guid\Version\AbstractNamespace');
         $this->mock->setNamespace('newName');
     }
 

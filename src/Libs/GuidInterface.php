@@ -8,7 +8,7 @@
  * @see https://github.com/tankfairies/guid
  */
 
-namespace Guid\Libs;
+namespace Tankfairies\Guid\Libs;
 
 /**
  * Interface GuidInterface

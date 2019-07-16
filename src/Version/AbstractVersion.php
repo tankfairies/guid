@@ -8,10 +8,10 @@
  * @see https://github.com/tankfairies/guid
  */
 
-namespace Guid\Version;
+namespace Tankfairies\Guid\Version;
 
-use Guid\Libs\GuidException;
-use Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Libs\GuidException;
+use Tankfairies\Guid\Libs\GuidInterface;
 
 /**
  * Class AbstractVersion
