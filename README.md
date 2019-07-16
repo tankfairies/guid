@@ -108,4 +108,4 @@ $guidToken = $guid->generate(
 
 ## Copyright and license
 
-The tankfairies/guid library is Copyright (c) 2019 Tankfairies (https://tankfairies.com) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
+The tankfairies/guid library is Copyright (c) 2019 Tankfairies (https://tankfairies.com) and licensed for use under the MIT License (MIT).
