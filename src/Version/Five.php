@@ -21,7 +21,7 @@ class Five extends AbstractNamespace
      * @param string $value
      * @return string
      */
-    protected function hash(string $value)
+    protected function hash(string $value): string
     {
         return sha1($value, true);
     }

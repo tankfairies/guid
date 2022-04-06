@@ -24,7 +24,7 @@ class One extends AbstractVersion implements VersionInterface
 
     /**
      * @param int $fmt
-     * @return string
+     * @return mixed
      * @throws Exception
      */
     public function generate(int $fmt)

@@ -25,7 +25,7 @@ class Four extends AbstractVersion implements VersionInterface
      * @return string
      * @throws Exception
      */
-    public function generate(int $fmt)
+    public function generate(int $fmt): string
     {
         $uuid = $this->uuidField;
 

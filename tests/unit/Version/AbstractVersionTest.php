@@ -43,7 +43,7 @@ class AbstractVersionTest extends Unit
 
     public function testSetSaltInvalid()
     {
-        $this->tester->expectException(
+        $this->tester->expectThrowable(
             new GuidException('Salt needs to be at least 6 characters long'),
             function () {
                 $mock = $this->getMockForAbstractClass('Tankfairies\Guid\Version\AbstractVersion');

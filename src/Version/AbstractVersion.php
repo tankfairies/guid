@@ -19,20 +19,8 @@ use Tankfairies\Guid\Libs\GuidInterface;
  */
 abstract class AbstractVersion
 {
-    /* UUID versions */
-    const UUID_TIME = 1;       /* Time based UUID */
-    const UUID_NAME_MD5 = 3;   /* Name based (MD5) UUID */
-    const UUID_RANDOM = 4;     /* Random UUID */
-    const UUID_NAME_SHA1 = 5;  /* Name based (SHA1) UUID */
-
-    /* UUID formats */
-    const FMT_FIELD = 100;
-    const FMT_STRING = 101;
-    const FMT_BINARY = 102;
-    const FMT_BYTE = 16;
-
     /* Field UUID representation */
-    protected $uuidField = [
+    protected array $uuidField = [
         'time_low' => 0,      /* 32-bit */
         'time_mid' => 0,      /* 16-bit */
         'time_hi' => 0,       /* 16-bit */
@@ -41,7 +29,7 @@ abstract class AbstractVersion
         'node' => []          /* 48-bit */
     ];
 
-    protected $convert = [
+    protected array $convert = [
         GuidInterface::FMT_FIELD => [
             GuidInterface::FMT_BYTE => 'field2byte',
             GuidInterface::FMT_STRING => 'field2string',
@@ -57,8 +45,8 @@ abstract class AbstractVersion
         ],
     ];
 
-    protected $salt = '';
-    protected $namespace = '';
+    protected string $salt = '';
+    protected string $namespace = '';
 
     /**
      * Set the namespace for v3 and v5
@@ -66,7 +54,7 @@ abstract class AbstractVersion
      * @param $namespace
      * @return $this
      */
-    public function setNamespace($namespace)
+    public function setNamespace($namespace): self
     {
         $this->namespace = $namespace;
         return $this;
@@ -79,7 +67,7 @@ abstract class AbstractVersion
      * @return $this
      * @throws GuidException
      */
-    public function setSalt($salt)
+    public function setSalt($salt): self
     {
         $size = mb_strlen($salt);
         if ($size < 6 && $size != 0) {
@@ -95,9 +83,12 @@ abstract class AbstractVersion
      * @param $x
      * @return int
      */
-    protected function swap32($x)
+    protected function swap32($x): int
     {
-        return (($x & 0x000000ff) << 24) | (($x & 0x0000ff00) << 8) | (($x & 0x00ff0000) >> 8) | (($x & 0xff000000) >> 24);
+        return (($x & 0x000000ff) << 24)
+            | (($x & 0x0000ff00) << 8)
+            | (($x & 0x00ff0000) >> 8)
+            | (($x & 0xff000000) >> 24);
     }
 
     /**
@@ -106,7 +97,7 @@ abstract class AbstractVersion
      * @param $x
      * @return int
      */
-    protected function swap16($x)
+    protected function swap16($x): int
     {
         return (($x & 0x00ff) << 8) | (($x & 0xff00) >> 8);
     }
@@ -141,7 +132,7 @@ abstract class AbstractVersion
      * @param $src
      * @return string
      */
-    protected function field2string($src)
+    protected function field2string($src): string
     {
         $str = sprintf(
             '%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x',
@@ -175,7 +166,7 @@ abstract class AbstractVersion
      * @param $uuid
      * @return array
      */
-    protected function byte2field($uuid)
+    protected function byte2field($uuid): array
     {
         $field = $this->uuidField;
         $field['time_low'] = ($uuid[0] << 24) | ($uuid[1] << 16) | ($uuid[2] << 8) | $uuid[3];
@@ -223,7 +214,7 @@ abstract class AbstractVersion
      * @param $src
      * @return array
      */
-    protected function string2field($src)
+    protected function string2field($src): array
     {
         $parts = sscanf($src, '%x-%x-%x-%x-%02x%02x%02x%02x%02x%02x');
         $field = $this->uuidField;

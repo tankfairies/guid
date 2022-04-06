@@ -4,6 +4,7 @@ namespace Tests\unit\Version;
 
 use \Codeception\Test\Unit;
 use Tankfairies\Guid\Libs\GuidInterface;
+use Tankfairies\Guid\Version\AbstractNamespace;
 
 class AbstractNamespaceTest extends Unit
 {
@@ -15,7 +16,14 @@ class AbstractNamespaceTest extends Unit
 
     protected function _before()
     {
-        $this->mock = $this->getMockForAbstractClass('Tankfairies\Guid\Version\AbstractNamespace');
+        $this->mock = new class extends AbstractNamespace {
+            // Just a sample public function that returns this anonymous instance
+            public function hash(string $value): string
+            {
+                return md5('newName');
+            }
+        };
+
         $this->mock->setNamespace('newName');
     }
 
@@ -26,10 +34,6 @@ class AbstractNamespaceTest extends Unit
 
     public function testGenerate()
     {
-        $this->mock->expects($this->once())
-            ->method('hash')
-            ->willReturn(md5('newName'));
-
         $guid = $this->mock->generate(GuidInterface::FMT_STRING);
 
         $this->assertEquals('34393062-3831-3938-b433-616131356565', $guid);

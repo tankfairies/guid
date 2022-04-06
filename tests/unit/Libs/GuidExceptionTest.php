@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Libs;
+namespace Tests\unit\Libs;
 
 use \Codeception\Test\Unit;
 use Tankfairies\Guid\Libs\GuidException;
@@ -22,7 +22,7 @@ class GuidExceptionTest extends Unit
 
     public function testException()
     {
-        $this->tester->expectException(
+        $this->tester->expectThrowable(
             new GuidException('this is a test'),
             function () {
                 throw new GuidException('this is a test');

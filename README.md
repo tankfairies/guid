@@ -2,7 +2,7 @@
 [![Total Downloads](https://poser.pugx.org/tankfairies/guid/downloads)](https://packagist.org/packages/tankfairies/guid)
 [![Latest Unstable Version](https://poser.pugx.org/tankfairies/guid/v/unstable)](https://packagist.org/packages/tankfairies/guid)
 [![License](https://poser.pugx.org/tankfairies/guid/license)](https://packagist.org/packages/tankfairies/guid)
-[![Build Status](https://travis-ci.com/tankfairies/guid.svg?branch=master)](https://travis-ci.com/tankfairies/guid)
+[![Build Status](https://travis-ci.com/tankfairies/guid.svg?branch=master)](https://travis-ci.com/github/tankfairies/guid)
 
 # GUID
 
@@ -48,8 +48,8 @@ The guid generate function has four parameters: -
 
 ```
 $guid->generate(
-    type/version,
-    output format,
+    version,
+    format,
     salt,
     namespace
 )

@@ -21,7 +21,7 @@ abstract class AbstractNamespace extends AbstractVersion implements VersionInter
 
     /**
      * @param int $fmt
-     * @return string
+     * @return mixed
      */
     public function generate(int $fmt)
     {
@@ -66,5 +66,5 @@ abstract class AbstractNamespace extends AbstractVersion implements VersionInter
      * @param string $value
      * @return string
      */
-    abstract protected function hash(string $value);
+    abstract protected function hash(string $value): string;
 }

@@ -44,10 +44,10 @@ class Guid
      * @param int $fmt
      * @param string $salt
      * @param string $namespace
-     * @return string
+     * @return mixed
      * @throws GuidException
      */
-    public function generate(int $type, int $fmt = GuidInterface::FMT_BYTE, $salt = '', $namespace = '')
+    public function generate(int $type, int $fmt = GuidInterface::FMT_BYTE, string $salt = '', string $namespace = '')
     {
         try {
             switch ($type) {
