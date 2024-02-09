@@ -10,3 +10,8 @@ script:
 branches:
   only:
     - 2.0
+dist: focal
+addons:
+  apt:
+    packages:
+      - libonig5
