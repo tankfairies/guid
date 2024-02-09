@@ -12,22 +12,26 @@ namespace Tankfairies\Guid\Version;
 
 use Tankfairies\Guid\Libs\GuidException;
 use Tankfairies\Guid\Libs\GuidInterface;
-use Exception;
 
 /**
  * Class One
  *
- * @package Guid\Version
+ * Represents version 1 GUID (Globally Unique Identifier)
+ *
+ * @package Tankfairies\Guid
  */
 class One extends AbstractVersion implements VersionInterface
 {
 
     /**
-     * @param int $fmt
-     * @return mixed
-     * @throws Exception
+     * Generates a GUID (Globally Unique Identifier).
+     *
+     * @param int $fmt The format of the generated GUID.
+     * @return mixed The generated GUID according to the specified format.
+     *
+     * @throws GuidException If the salt is not set.
      */
-    public function generate(int $fmt)
+    public function generate(int $fmt): mixed
     {
         if ($this->salt == '') {
             throw new GuidException('Salt not set');

@@ -13,7 +13,7 @@ namespace Tankfairies\Guid\Libs;
 /**
  * Interface GuidInterface
  *
- * @package Guid
+ * @package Tankfairies\Guid
  */
 interface GuidInterface
 {

@@ -13,13 +13,18 @@ namespace Tankfairies\Guid\Version;
 /**
  * Class Three
  *
- * @package Guid\Version
+ * Represents version 4 GUID (Globally Unique Identifier)
+ *
+ * @package Tankfairies\Guid
  */
 class Three extends AbstractNamespace
 {
     /**
-     * @param string $value
-     * @return string
+     * Hashes the given value using the MD5 algorithm.
+     *
+     * @param string $value The value to be hashed.
+     *
+     * @return string The hashed value.
      */
     protected function hash(string $value): string
     {

@@ -14,16 +14,23 @@ use Tankfairies\Guid\Libs\GuidInterface;
 
 /**
  * Class AbstractNamespace
- * @package Version
+ *
+ * This class represents an abstract namespace that can be used to generate a globally unique identifier (GUID)
+ * based on a given format.
+ *
+ * @package Tankfairies\Guid
  */
 abstract class AbstractNamespace extends AbstractVersion implements VersionInterface
 {
 
     /**
-     * @param int $fmt
-     * @return mixed
+     * Generate a GUID based on the given format.
+     *
+     * @param int $fmt The format of the generated GUID.
+     *
+     * @return mixed The generated GUID in the specified format.
      */
-    public function generate(int $fmt)
+    public function generate(int $fmt): mixed
     {
         $field = $this->string2field($this->namespace);
 

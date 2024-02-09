@@ -14,8 +14,13 @@ use Tankfairies\Guid\Libs\GuidException;
 use Tankfairies\Guid\Libs\GuidInterface;
 
 /**
- * Class AbstractVersion
- * @package Guid\Version
+ * AbstractVersion is an abstract class that provides common functionality
+ * for different versions of GUID generation and conversion.
+ *
+ * This class defines the fields and methods that are shared among the different
+ * versions of the GUID generation and conversion classes.
+ *
+ * @package Tankfairies\Guid
  */
 abstract class AbstractVersion
 {
@@ -51,10 +56,10 @@ abstract class AbstractVersion
     /**
      * Set the namespace for v3 and v5
      *
-     * @param $namespace
+     * @param string $namespace
      * @return $this
      */
-    public function setNamespace($namespace): self
+    public function setNamespace(string $namespace): self
     {
         $this->namespace = $namespace;
         return $this;
@@ -63,11 +68,11 @@ abstract class AbstractVersion
     /**
      * Sets the salt for v1, v3 and v5
      *
-     * @param $salt
+     * @param string $salt
      * @return $this
      * @throws GuidException
      */
-    public function setSalt($salt): self
+    public function setSalt(string $salt): self
     {
         $size = mb_strlen($salt);
         if ($size < 6 && $size != 0) {
@@ -106,9 +111,9 @@ abstract class AbstractVersion
      * Assumes correct byte order
      *
      * @param $src
-     * @return mixed
+     * @return array
      */
-    protected function field2byte($src)
+    protected function field2byte($src): array
     {
         $uuid[0] = ($src['time_low'] & 0xff000000) >> 24;
         $uuid[1] = ($src['time_low'] & 0x00ff0000) >> 16;
@@ -125,14 +130,14 @@ abstract class AbstractVersion
             $uuid[10 + $i] = $src['node'][$i];
         }
 
-        return ($uuid);
+        return $uuid;
     }
 
     /**
-     * @param $src
+     * @param array $src
      * @return string
      */
-    protected function field2string($src): string
+    protected function field2string(array $src): string
     {
         $str = sprintf(
             '%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x',
@@ -156,7 +161,7 @@ abstract class AbstractVersion
      * @param $src
      * @return false|string
      */
-    protected function field2binary($src)
+    protected function field2binary($src): false|string
     {
         $byte = $this->field2byte($src);
         return $this->byte2binary($byte);
@@ -186,7 +191,7 @@ abstract class AbstractVersion
      * @param $src
      * @return false|string
      */
-    protected function byte2binary($src)
+    protected function byte2binary($src): false|string
     {
         $raw = pack(
             'C16',

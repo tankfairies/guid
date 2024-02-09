@@ -2,18 +2,19 @@
 
 namespace Tests\unit\Version;
 
-use \Codeception\Test\Unit;
+use Codeception\Test\Unit;
+use UnitTester;
 use Tankfairies\Guid\Libs\GuidInterface;
 use Tankfairies\Guid\Version\One;
 
 class OneTest extends Unit
 {
-    protected $one;
+    protected One|null $one;
 
     /**
-     * @var \UnitTester
+     * @var UnitTester
      */
-    protected $tester;
+    protected UnitTester $tester;
 
     protected function _before()
     {
@@ -29,6 +30,6 @@ class OneTest extends Unit
     {
         $guid = $this->one->setSalt('saltsalt')->generate(GuidInterface::FMT_STRING);
 
-        $this->assertTrue(preg_match('/^\w{8}\-\w{4}\-\w{4}\-\w{4}\-\w{12}$/i', $guid)!==false);
+        $this->assertTrue(preg_match('/^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$/i', $guid)!==false);
     }
 }

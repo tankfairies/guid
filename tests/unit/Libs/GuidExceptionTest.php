@@ -2,15 +2,16 @@
 
 namespace Tests\unit\Libs;
 
-use \Codeception\Test\Unit;
+use Codeception\Test\Unit;
+use UnitTester;
 use Tankfairies\Guid\Libs\GuidException;
 
 class GuidExceptionTest extends Unit
 {
     /**
-     * @var \UnitTester
+     * @var UnitTester
      */
-    protected $tester;
+    protected UnitTester $tester;
     
     protected function _before()
     {

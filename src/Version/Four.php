@@ -10,20 +10,25 @@
 
 namespace Tankfairies\Guid\Version;
 
-use Exception;
+use Random\RandomException;
 use Tankfairies\Guid\Libs\GuidInterface;
 
 /**
  * Class Four
  *
- * @package Guid\Version
+ * Represents version 4 GUID (Globally Unique Identifier)
+ *
+ * @package Tankfairies\Guid
  */
 class Four extends AbstractVersion implements VersionInterface
 {
     /**
-     * @param int $fmt
-     * @return string
-     * @throws Exception
+     * Generates a UUID based on the given format.
+     *
+     * @param int $fmt The format of the UUID to generate. Possible values are defined in GuidInterface::FMT_FIELD.
+     * @return string The generated UUID.
+     *
+     * @throws RandomException
      */
     public function generate(int $fmt): string
     {

@@ -13,13 +13,18 @@ namespace Tankfairies\Guid\Version;
 /**
  * Class Five
  *
- * @package Guid\Version
+ * Provides functionality for hashing values using the SHA1 algorithm,
+ * and it represents a version 5 GUID.
+ *
+ * @package Tankfairies\Guid
  */
 class Five extends AbstractNamespace
 {
     /**
-     * @param string $value
-     * @return string
+     * Hashes the given value using the SHA1 algorithm.
+     *
+     * @param string $value The value to be hashed.
+     * @return string The hashed value as a string.
      */
     protected function hash(string $value): string
     {

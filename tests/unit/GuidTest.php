@@ -25,6 +25,10 @@ class GuidTest extends Unit
     }
 
     // tests
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV1GuidArray()
     {
         $this->assertTrue(
@@ -38,6 +42,9 @@ class GuidTest extends Unit
         );
     }
 
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV1GuidString()
     {
         $this->assertTrue(
@@ -50,6 +57,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV3GuidString()
     {
         $this->assertTrue(
@@ -63,6 +74,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV4GuidString()
     {
         $this->assertTrue(
@@ -74,6 +89,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV5GuidString()
     {
         $this->assertTrue(
@@ -89,6 +108,9 @@ class GuidTest extends Unit
     }
 
 
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV1GuidBinary()
     {
         $this->assertTrue(
@@ -101,6 +123,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV3GuidBinary()
     {
         $this->assertTrue(
@@ -114,6 +140,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV4GuidBinary()
     {
         $this->assertTrue(
@@ -125,6 +155,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV5GuidBinary()
     {
         $this->assertTrue(
@@ -178,6 +212,9 @@ class GuidTest extends Unit
     }
 
 
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV3GuidNamespaceByte()
     {
         $this->assertTrue(
@@ -191,6 +228,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV5GuidNamespaceByte()
     {
         $this->assertTrue(
@@ -204,6 +245,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV3GuidNamespaceString()
     {
         $this->assertTrue(
@@ -217,6 +262,10 @@ class GuidTest extends Unit
             )
         );
     }
+
+    /**
+     * @throws GuidException
+     */
     public function testGenerateV5GuidNamespaceString()
     {
         $this->assertTrue(

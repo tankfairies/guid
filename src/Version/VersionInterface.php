@@ -13,7 +13,7 @@ namespace Tankfairies\Guid\Version;
 /**
  * Interface VersionInterface
  *
- * @package Version
+ * @package Tankfairies\Guid
  */
 interface VersionInterface
 {
@@ -21,5 +21,5 @@ interface VersionInterface
      * @param int $fmt
      * @return mixed
      */
-    public function generate(int $fmt);
+    public function generate(int $fmt): mixed;
 }

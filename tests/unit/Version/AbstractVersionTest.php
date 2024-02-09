@@ -2,16 +2,17 @@
 
 namespace Tests\unit\Version;
 
-use \Codeception\Test\Unit;
+use Codeception\Test\Unit;
+use UnitTester;
 use Tankfairies\Guid\Libs\GuidException;
 use ReflectionProperty;
 
 class AbstractVersionTest extends Unit
 {
     /**
-     * @var \UnitTester
+     * @var UnitTester
      */
-    protected $tester;
+    protected UnitTester $tester;
 
     protected function _before()
     {

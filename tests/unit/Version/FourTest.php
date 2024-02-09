@@ -2,18 +2,19 @@
 
 namespace Tests\unit\Version;
 
-use \Codeception\Test\Unit;
+use Codeception\Test\Unit;
+use UnitTester;
 use Tankfairies\Guid\Libs\GuidInterface;
 use Tankfairies\Guid\Version\Four;
 
 class FourTest extends Unit
 {
-    protected $four;
+    protected Four|null $four;
 
     /**
-     * @var \UnitTester
+     * @var UnitTester
      */
-    protected $tester;
+    protected UnitTester $tester;
 
     protected function _before()
     {
