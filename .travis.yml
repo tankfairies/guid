@@ -9,4 +9,4 @@ script:
   - php vendor/bin/codecept run unit
 branches:
   only:
-    - 2.0.0
+    - 2.0
