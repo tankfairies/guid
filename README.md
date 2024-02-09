@@ -6,7 +6,7 @@
 
 # GUID
 
-It's PHP 7.1+ library for generating and working with [RFC 4122][rfc4122] version 1, 3, 4, and 5 
+It's PHP 7.1+ (master) and PHP 8.2 (2.0) library for generating and working with [RFC 4122][rfc4122] version 1, 3, 4, and 5 
 universally unique identifiers (UUID) / globally unique identifiers (GUID).
 
 Derived from code by [Fredrik Lindberg](https://github.com/fredriklindberg).
